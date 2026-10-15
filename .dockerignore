@@ -1,0 +1,8 @@
+.venv
+.git
+reference-ai
+data
+__pycache__
+*.pyc
+outputs/*
+!outputs/training_metrics.json

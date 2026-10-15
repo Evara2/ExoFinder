@@ -1,0 +1,21 @@
+
+services:
+  api:
+    image: exofinder-api:1.0
+    container_name: exofinder-api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    networks:
+      default:
+        aliases:
+          - exofinder-api
+
+  frontend:
+    image: exofinder-frontend:2.0
+    container_name: exofinder-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+    restart: unless-stopped
